@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
-@EnableEurekaClient   // para registrar el servicio en el servidor de eureka
+@EnableEurekaClient   // para registrar el servicio en el servidor de eureka como un cliente
 public class UsuarioServiceApplication {
 
 	public static void main(String[] args) {
