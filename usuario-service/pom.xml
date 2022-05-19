@@ -54,19 +54,10 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap -->
-		<!-- 
-			se usa esta dependencia para que funcione el config server y el archivo de propiedades
-			se tiene que cambiar a bootstrap.yaml y solo dejar la configuracion del nombre der servicio y la 
-			configuracion del config-server, ejemplo:
-			
-			spring:
-  			  application:
-    			name: usuario-service
-  			  cloud:
-    			config:
-      			  enabled: true
-      			  uri: http://localhost:8081 
-		 -->
+		<!-- se usa esta dependencia para que funcione el config server y el archivo 
+			de propiedades se tiene que cambiar a bootstrap.yaml y solo dejar la configuracion 
+			del nombre der servicio y la configuracion del config-server, ejemplo: spring: 
+			application: name: usuario-service cloud: config: enabled: true uri: http://localhost:8081 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
@@ -77,6 +68,26 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		
+		<!-- Estas dependencias se ponen en este servicio ya que este es el que consume los otros microservicios,
+		starter-aop es requerida por circuitbreaker-resilience4j -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
