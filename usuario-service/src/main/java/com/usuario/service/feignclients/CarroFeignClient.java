@@ -14,7 +14,10 @@ import com.usuario.service.modelos.Carro;
 // Feign indica que es un cliente del servicio usuario que tiene como nombre "carro-service" y que se 
 // encuentra expuesto en la url-puerto ""http://localhost:8002"
 
-@FeignClient(name = "carro-service",url = "http://localhost:8002")
+// Con una configuracion GateWay se quita esta y se pone la de abajo
+//@FeignClient(name = "carro-service",url = "http://localhost:8002")
+@FeignClient(name = "carro-service")
+
 @RequestMapping("/carro")
 public interface CarroFeignClient {
 
